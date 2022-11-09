@@ -1,6 +1,8 @@
 package lotto.config;
 
 public class LottoConstants {
+    public static final int LOTTO_START_INCLUSIVE = 1;
+    public static final int LOTTO_END_INCLUSIVE = 45;
     public static final String INPUT_AMOUNT_MESSAGE = "구입금액을 입력해 주세요.";
     public static final String PURCHASE_MESSAGE_PATTERN = "\n{0}개를 구매했습니다.";
     public static final String LOTTO_MESSAGE_PATTERN = "[{0}, {1}, {2}, {3}, {4}, {5}]\n";

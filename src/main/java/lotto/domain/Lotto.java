@@ -1,6 +1,9 @@
-package lotto;
+package lotto.domain;
 
+import java.text.MessageFormat;
 import java.util.List;
+
+import static lotto.config.LottoConstants.LOTTO_MESSAGE_PATTERN;
 
 public class Lotto {
     private final List<Integer> numbers;
@@ -16,5 +19,7 @@ public class Lotto {
         }
     }
 
-    // TODO: 추가 기능 구현
+    public String printableString() {
+        return MessageFormat.format(LOTTO_MESSAGE_PATTERN, numbers.toArray());
+    }
 }

@@ -41,4 +41,10 @@ public class LottoScoreDto {
     public double getRate() {
         return rate;
     }
+
+    @Override
+    public String toString() {
+        return "3개 일치 : " + three + "\n4개 일치 : " + four + "\n5개 일치 : "
+                + five + "\n5개 보너스 일치 : " + fiveBonus + "\n6개 일치 : " + six;
+    }
 }

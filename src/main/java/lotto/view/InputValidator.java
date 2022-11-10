@@ -32,22 +32,10 @@ public class InputValidator {
         }
     }
 
-    private static void isBiggerThanZero(int amount) {
-        if (amount < 0) {
-            throw new IllegalArgumentException();
-        }
-    }
-
-    private static void isMultipleOfThousand(int amount) {
-        if (amount % 1000 != 0) {
-            throw new IllegalArgumentException();
-        }
-    }
-
     public static Lotto isLottoNumberValid(String input) {
         isNotNull(input);
         List<String> lottoTokens = List.of(input.split(","));
-        lottoTokens.forEach(it -> isNumber(it));
+        lottoTokens.forEach(InputValidator::isNumber);
         List<Integer> lottoNumbers = lottoTokens.stream()
                 .mapToInt(Integer::parseInt)
                 .boxed()

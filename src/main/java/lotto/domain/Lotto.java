@@ -13,7 +13,6 @@ public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        List<Integer> numbers1;
         validate(numbers);
         this.numbers = new ArrayList<>();
         numbers.forEach(this::appendIfUnique);

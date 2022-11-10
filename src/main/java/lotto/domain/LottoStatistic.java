@@ -6,8 +6,8 @@ public class LottoStatistic {
     private static final int FIVE_MONEY = 1_500_000;
     private static final int FIVE_BONUS_MONEY = 30_000_000;
     private static final int SIX_MONEY = 2_000_000_000;
-    private Lottos lottos;
-    private WinningLottery winningLottery;
+    private final Lottos lottos;
+    private final WinningLottery winningLottery;
 
     private LottoStatistic(Lottos lottos, WinningLottery winningLottery) {
         this.lottos = lottos;

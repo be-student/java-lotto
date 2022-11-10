@@ -2,6 +2,7 @@ package lotto.view;
 
 import handler.MockInputHandler;
 import lotto.domain.Lotto;
+import lotto.domain.Money;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,7 @@ public class InputViewTest {
     @Test
     void case1() {
         mockInputHandler.setExpected("1000");
-        assertThat(new InputView(mockInputHandler).inputAmount()).isEqualTo(1000);
+        assertThat(new InputView(mockInputHandler).inputAmount()).isEqualTo(Money.from(1000));
     }
 
     @DisplayName("isAmountValidate 메서드는 입력으로 받은 문자열이 올바른 금액이 아니라면 IEA예외를 발생시킨다")

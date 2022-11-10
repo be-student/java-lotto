@@ -1,6 +1,7 @@
 package lotto.view;
 
 import lotto.domain.Lotto;
+import lotto.domain.Money;
 
 import java.util.List;
 import java.util.regex.Pattern;
@@ -12,13 +13,11 @@ public class InputValidator {
     private InputValidator() {
     }
 
-    public static int isAmountValidate(String input) {
+    public static Money isAmountValidate(String input) {
         isNotNull(input);
         isNumber(input);
         int amount = Integer.parseInt(input);
-        isBiggerThanZero(amount);
-        isMultipleOfThousand(amount);
-        return amount;
+        return Money.from(amount);
     }
 
     private static void isNotNull(String input) {

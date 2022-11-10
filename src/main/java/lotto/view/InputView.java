@@ -2,6 +2,7 @@ package lotto.view;
 
 import handler.InputHandler;
 import lotto.domain.Lotto;
+import lotto.domain.Money;
 
 public class InputView {
     private final InputHandler inputHandler;
@@ -10,7 +11,7 @@ public class InputView {
         this.inputHandler = inputHandler;
     }
 
-    public int inputAmount() {
+    public Money inputAmount() {
         return InputValidator.isAmountValidate(inputHandler.readLine());
     }
 

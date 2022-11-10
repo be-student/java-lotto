@@ -1,5 +1,9 @@
 package lotto.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
+
 import static lotto.config.LottoConstants.LOTTO_END_INCLUSIVE;
 import static lotto.config.LottoConstants.LOTTO_START_INCLUSIVE;
 
@@ -14,7 +18,13 @@ public class LottoGenerator {
         return new LottoGenerator(random);
     }
 
-    public Lotto generateLotto() {
-        return new Lotto(random.pickUniqueNumbersInRange(LOTTO_START_INCLUSIVE, LOTTO_END_INCLUSIVE, 6));
+    public List<Lotto> generateLotto(int count) {
+        List<Lotto> lottos = new ArrayList<>();
+        IntStream.range(0, count).forEach((__) -> {
+            List<Integer> randoms = random.pickUniqueNumbersInRange(LOTTO_START_INCLUSIVE, LOTTO_END_INCLUSIVE, 6);
+            Lotto lotto = new Lotto(randoms);
+            lottos.add(lotto);
+        });
+        return lottos;
     }
 }

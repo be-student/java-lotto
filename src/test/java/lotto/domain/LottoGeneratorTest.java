@@ -28,7 +28,7 @@ public class LottoGeneratorTest {
     @DisplayName("로또 값을 생성한다")
     @Test
     void case1() {
-        Lotto lotto = LottoGenerator.getInstance(random).generateLotto();
-        assertThat(lotto.printableString()).isEqualTo("[1, 2, 3, 4, 5, 6]");
+        List<Lotto> lottos = LottoGenerator.getInstance(random).generateLotto(1);
+        assertThat(lottos.get(0).printableString()).isEqualTo("[1, 2, 3, 4, 5, 6]");
     }
 }

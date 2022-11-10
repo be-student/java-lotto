@@ -2,7 +2,7 @@ package handler;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MockOutputView implements OutputHandler {
+public class MockOutputHandler implements OutputHandler {
     private int current = 0;
     private String[] expected;
 

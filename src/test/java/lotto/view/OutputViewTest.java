@@ -1,6 +1,6 @@
 package lotto.view;
 
-import handler.MockOutputView;
+import handler.MockOutputHandler;
 import lotto.domain.Lotto;
 import lotto.domain.LottoScoreDto;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,11 +22,11 @@ import static lotto.config.LottoConstants.STATISTIC_PERCENT_PATTERN;
 import static lotto.config.LottoConstants.THREE_CORRECT_PATTERN;
 
 public class OutputViewTest {
-    private MockOutputView mockOutputView;
+    private MockOutputHandler mockOutputView;
 
     @BeforeEach
     void setUp() {
-        mockOutputView = new MockOutputView();
+        mockOutputView = new MockOutputHandler();
     }
 
     @DisplayName("printInputAMountMessage 메서드는 금액 입력 메시지를 출력한다")

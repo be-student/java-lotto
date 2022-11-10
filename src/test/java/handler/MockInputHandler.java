@@ -1,14 +1,15 @@
 package handler;
 
 public class MockInputHandler implements InputHandler {
-    private String expected;
+    private String[] expected;
+    private int current = 0;
 
-    public void setExpected(String expected) {
+    public void setExpected(String... expected) {
         this.expected = expected;
     }
 
     @Override
     public String readLine() {
-        return expected;
+        return expected[current++];
     }
 }

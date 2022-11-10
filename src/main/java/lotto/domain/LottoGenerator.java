@@ -21,7 +21,8 @@ public class LottoGenerator {
     public List<Lotto> generateLotto(int count) {
         List<Lotto> lottos = new ArrayList<>();
         IntStream.range(0, count).forEach((__) -> {
-            List<Integer> randoms = random.pickUniqueNumbersInRange(LOTTO_START_INCLUSIVE, LOTTO_END_INCLUSIVE, 6);
+            List<Integer> randoms = random
+                    .pickUniqueNumbersInRange(LOTTO_START_INCLUSIVE, LOTTO_END_INCLUSIVE, 6);
             Lotto lotto = new Lotto(randoms);
             lottos.add(lotto);
         });

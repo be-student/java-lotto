@@ -43,6 +43,10 @@ public class Lotto {
         numbers.add(number);
     }
 
+    public boolean contains(int number) {
+        return numbers.contains(number);
+    }
+
     public String printableString() {
         return MessageFormat.format(LOTTO_MESSAGE_PATTERN, numbers.toArray());
     }

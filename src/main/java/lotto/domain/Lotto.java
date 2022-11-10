@@ -2,6 +2,7 @@ package lotto.domain;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import static lotto.config.LottoConstants.LOTTO_END_INCLUSIVE;
@@ -12,9 +13,11 @@ public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
+        List<Integer> numbers1;
         validate(numbers);
         this.numbers = new ArrayList<>();
         numbers.forEach(this::appendIfUnique);
+        this.numbers.sort(Comparator.naturalOrder());
     }
 
     private void isNumberInRange(int number) {

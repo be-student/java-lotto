@@ -50,4 +50,8 @@ public class Lotto {
     public String printableString() {
         return MessageFormat.format(LOTTO_MESSAGE_PATTERN, numbers.toArray());
     }
+
+    public int getIndex(int index) {
+        return numbers.get(index);
+    }
 }

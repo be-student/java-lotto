@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class InputValidatorTest {
-    @DisplayName("isAmountValidate 메서드는 입력으로 받은 문자열이 0같거나 크고 1000으로 떨어지는지 검증한고 숫자를 반환한다.")
+    @DisplayName("isAmountValidate 메서드는 입력으로 받은 문자열이 0같거나 크고 1000으로 떨어지는지 검증하고 숫자를 반환한다.")
     @Test
     void case1() {
         assertThat(InputValidator.isAmountValidate("1000")).isEqualTo(1000);

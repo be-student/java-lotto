@@ -3,6 +3,7 @@ package lotto.view;
 import handler.OutputHandler;
 import lotto.domain.Lotto;
 import lotto.domain.LottoScoreDto;
+import lotto.domain.Lottos;
 
 import java.text.MessageFormat;
 
@@ -34,8 +35,10 @@ public class OutputView {
         outputHandler.println(MessageFormat.format(PURCHASE_MESSAGE_PATTERN, count));
     }
 
-    public void printLotto(Lotto lotto) {
-        outputHandler.println(lotto.printableString());
+    public void printLotto(Lottos lottos) {
+        for (Lotto lotto : lottos.getLottos()) {
+            outputHandler.println(lotto.printableString());
+        }
     }
 
     public void printInputLotteryNumbers() {
@@ -63,7 +66,6 @@ public class OutputView {
         outputHandler.println(MessageFormat.format(FIVE_CORRECT_PATTERN, lottoScoreDto.getFive()));
         outputHandler.println(MessageFormat.format(FIVE_BONUS_CORRECT_PATTERN, lottoScoreDto.getFiveBonus()));
         outputHandler.println(MessageFormat.format(SIX_CORRECT_PATTERN, lottoScoreDto.getSix()));
-
     }
 
     private void printStatisticRate(double rate) {

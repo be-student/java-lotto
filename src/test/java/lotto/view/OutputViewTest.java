@@ -3,6 +3,7 @@ package lotto.view;
 import handler.MockOutputHandler;
 import lotto.domain.Lotto;
 import lotto.domain.LottoScoreDto;
+import lotto.domain.Lottos;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -46,8 +47,8 @@ public class OutputViewTest {
     @DisplayName("printLotto 메서드는 로또를 정해진 형식으로 출력합니다")
     @Test
     void case3() {
-        Lotto result = new Lotto(List.of(1, 2, 3, 4, 5, 6));
-        mockOutputView.setExpected(result.printableString());
+        Lottos result = Lottos.from(List.of(new Lotto(List.of(1, 2, 3, 4, 5, 6))));
+        mockOutputView.setExpected(result.getLottos().get(0).printableString());
         new OutputView(mockOutputView).printLotto(result);
     }
 

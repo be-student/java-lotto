@@ -1,5 +1,6 @@
 package lotto.domain;
 
+import java.text.MessageFormat;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,13 +14,19 @@ public class Lotto {
     private static final String LOTTERY_SIZE_ERROR =
             "당첨 번호가 " + LOTTO_START_INCLUSIVE + "부터 " + LOTTO_END_INCLUSIVE + "가 아닙니다";
     private static final String LOTTERY_DUPLICATE_ERROR = "당첨 번호에 중복이 있습니다";
+
+    private static final String LOTTO_PRINT_FORMAT = "[{0}, {1}, {2}, {3}, {4}, {5}]";
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
         this.numbers = numbers.stream()
                 .sorted(Comparator.naturalOrder())
-                .collect(Collectors.toList());
+                .collect(Collectors.toUnmodifiableList());
+    }
+
+    public String getLottoPrint() {
+        return MessageFormat.format(LOTTO_PRINT_FORMAT, numbers.toArray());
     }
 
     private void validate(List<Integer> numbers) {

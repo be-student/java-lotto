@@ -10,8 +10,8 @@ public class LottoScoreDtoTest {
     @DisplayName("score 를 그대로 반환할 수 있다")
     @Test
     void case1() {
-        LottoScoreDto lottoScoreDto = new LottoScoreDto(3, 4,
-                5, 6, 7, 0.36);
+        LottoScoreDto lottoScoreDto = new LottoScoreDto(3L, 4L,
+                5L, 6L, 7L, 0.36);
         assertThat(lottoScoreDto.getThreeCorrect()).isEqualTo(3);
         assertThat(lottoScoreDto.getFourCorrect()).isEqualTo(4);
         assertThat(lottoScoreDto.getFiveCorrect()).isEqualTo(5);

@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LottoScoreDto {
-    private final Map<LottoScore, Integer> score = new HashMap<>();
+    private final Map<LottoScore, Long> score = new HashMap<>();
     private final double rate;
 
-    public LottoScoreDto(int threeCorrect, int fourCorrect, int fiveCorrect,
-                         int fiveBonusCorrect, int sixCorrect, double rate) {
+    public LottoScoreDto(long threeCorrect, long fourCorrect, long fiveCorrect,
+                         long fiveBonusCorrect, long sixCorrect, double rate) {
         score.put(LottoScore.THREE_CORRECT, threeCorrect);
         score.put(LottoScore.FOUR_CORRECT, fourCorrect);
         score.put(LottoScore.FIVE_CORRECT, fiveCorrect);
@@ -17,23 +17,23 @@ public class LottoScoreDto {
         this.rate = rate;
     }
 
-    public int getThreeCorrect() {
+    public long getThreeCorrect() {
         return score.get(LottoScore.THREE_CORRECT);
     }
 
-    public int getFourCorrect() {
+    public long getFourCorrect() {
         return score.get(LottoScore.FOUR_CORRECT);
     }
 
-    public int getFiveCorrect() {
+    public long getFiveCorrect() {
         return score.get(LottoScore.FIVE_CORRECT);
     }
 
-    public int getFiveBonusCorrect() {
+    public long getFiveBonusCorrect() {
         return score.get(LottoScore.FIVE_BONUS_CORRECT);
     }
 
-    public int getSixCorrect() {
+    public long getSixCorrect() {
         return score.get(LottoScore.SIX_CORRECT);
     }
 

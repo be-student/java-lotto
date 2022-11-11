@@ -23,4 +23,9 @@ public class InputView {
         String input = inputHandler.readLine();
         return InputValidator.validateAmount(input);
     }
+
+    public int getBonusNumber() {
+        String input = inputHandler.readLine();
+        return InputValidator.validateBonusNumber(input);
+    }
 }

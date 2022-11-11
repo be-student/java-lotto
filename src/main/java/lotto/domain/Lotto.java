@@ -1,6 +1,8 @@
 package lotto.domain;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static lotto.config.LottoConstants.LOTTO_END_INCLUSIVE;
 import static lotto.config.LottoConstants.LOTTO_LENGTH;
@@ -15,7 +17,9 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
-        this.numbers = numbers;
+        this.numbers = numbers.stream()
+                .sorted(Comparator.naturalOrder())
+                .collect(Collectors.toList());
     }
 
     private void validate(List<Integer> numbers) {
@@ -41,4 +45,8 @@ public class Lotto {
         }
     }
     // TODO: 추가 기능 구현
+
+    public int get(int index) {
+        return numbers.get(index);
+    }
 }

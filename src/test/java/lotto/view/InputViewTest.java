@@ -57,6 +57,6 @@ public class InputViewTest {
         mockInputHandler.setExpected("6,2,3,4,5,1");
         Lotto lotto = InputView.createWithHandler(mockInputHandler).getPlayerLottery();
         assertThat(lotto).isExactlyInstanceOf(Lotto.class);
-        assertThat(lotto.get(0)).isEqualTo(1);
+        assertThat(lotto.contains(0)).isEqualTo(false);
     }
 }

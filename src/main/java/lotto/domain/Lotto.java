@@ -44,9 +44,17 @@ public class Lotto {
             throw new IllegalArgumentException(LOTTERY_SIZE_ERROR);
         }
     }
-    // TODO: 추가 기능 구현
 
-    public int get(int index) {
-        return numbers.get(index);
+    public boolean contains(Integer value) {
+        return numbers.contains(value);
+    }
+
+    public int getSame(Lotto other) {
+        return numbers.stream().reduce(0, (total, value) -> {
+            if (other.contains(value)) {
+                return total + 1;
+            }
+            return total;
+        });
     }
 }

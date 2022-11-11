@@ -38,6 +38,6 @@ public class InputValidatorTest {
     void case4() {
         Lotto lotto = InputValidator.validateLotteryNumbers("6,2,3,4,5,1");
         assertThat(lotto).isExactlyInstanceOf(Lotto.class);
-        assertThat(lotto.get(0)).isEqualTo(1);
+        assertThat(lotto.contains(0)).isEqualTo(false);
     }
 }

@@ -28,7 +28,7 @@ public class LottoApplication implements LottoUseCase {
 
     @Override
     public LottosDto getAllLottos() {
-        return null;
+        return lottos.toDto();
     }
 
     @Override

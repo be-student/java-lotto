@@ -1,16 +1,22 @@
 package lotto.domain;
 
-import java.util.List;
+import java.util.Map;
 
 public class LottoResultDto {
 
-    private final List<List<Integer>> lottos;
+    private final Map<LottoResult, Integer> result;
+    private final int totalCount;
 
-    public LottoResultDto(List<List<Integer>> lottos) {
-        this.lottos = lottos;
+    public LottoResultDto(Map<LottoResult, Integer> result, int totalCount) {
+        this.result = result;
+        this.totalCount = totalCount;
     }
 
-    public List<List<Integer>> getLottos() {
-        return lottos;
+    public Map<LottoResult, Integer> getResult() {
+        return result;
+    }
+
+    public int getTotalCount() {
+        return totalCount;
     }
 }

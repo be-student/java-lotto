@@ -1,6 +1,5 @@
 package lotto.application.service;
 
-import lotto.application.port.in.BonusNumberCommand;
 import lotto.application.port.in.BuyLottoCommand;
 import lotto.application.port.in.LottoUseCase;
 import lotto.application.port.in.WinningNumbersCommand;
@@ -33,11 +32,6 @@ public class LottoApplication implements LottoUseCase {
 
     @Override
     public void changeWinningNumbers(WinningNumbersCommand winningNumbersCommand) {
-
-    }
-
-    @Override
-    public void changeBonusNUmber(BonusNumberCommand bonusNumberCommand) {
 
     }
 

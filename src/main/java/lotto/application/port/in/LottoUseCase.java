@@ -11,7 +11,6 @@ public interface LottoUseCase {
 
     void changeWinningNumbers(WinningNumbersCommand winningNumbersCommand);
 
-    void changeBonusNUmber(BonusNumberCommand bonusNumberCommand);
 
     LottoResultDto calculateStatistics();
 

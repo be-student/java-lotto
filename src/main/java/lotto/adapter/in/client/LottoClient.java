@@ -1,7 +1,9 @@
 package lotto.adapter.in.client;
 
+import java.util.List;
 import lotto.application.port.in.BuyLottoCommand;
 import lotto.application.port.in.LottoUseCase;
+import lotto.application.port.in.WinningNumbersCommand;
 
 public class LottoClient {
 
@@ -19,7 +21,6 @@ public class LottoClient {
         buyLotto();
         getAllLottos();
         changeWinningNumbers();
-        changeBonusNumber();
         printStatistic();
     }
 
@@ -34,12 +35,11 @@ public class LottoClient {
 
 
     private void changeWinningNumbers() {
+        List<Integer> correctNumber = inputView.askCorrectNumber();
+        int bonusNumber = inputView.askBonusNumber();
+        lottoUseCase.changeWinningNumbers(new WinningNumbersCommand(correctNumber, bonusNumber));
     }
-
-
-    private void changeBonusNumber() {
-    }
-
+    
     private void printStatistic() {
     }
 }

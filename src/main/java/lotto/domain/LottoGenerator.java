@@ -13,7 +13,7 @@ public class LottoGenerator {
     }
 
     public List<Lotto> generate(int count) {
-        return Stream.generate(() -> lottoNumbersGenerator.generate())
+        return Stream.generate(lottoNumbersGenerator::generate)
                 .limit(count)
                 .map(Lotto::new)
                 .collect(Collectors.toList());

@@ -1,5 +1,6 @@
 package lotto.application.service;
 
+import java.util.List;
 import lotto.application.port.in.BuyLottoCommand;
 import lotto.application.port.in.LottoUseCase;
 import lotto.application.port.in.WinningNumbersCommand;
@@ -8,11 +9,13 @@ import lotto.domain.LottoResultDto;
 import lotto.domain.Lottos;
 import lotto.domain.LottosDto;
 import lotto.domain.Money;
+import lotto.domain.WinningNumbers;
 
 public class LottoApplication implements LottoUseCase {
 
     private final LottoGenerator lottoGenerator;
     private Lottos lottos;
+    private WinningNumbers winningNumbers;
 
     public LottoApplication(LottoGenerator lottoGenerator) {
         this.lottoGenerator = lottoGenerator;
@@ -32,7 +35,9 @@ public class LottoApplication implements LottoUseCase {
 
     @Override
     public void changeWinningNumbers(WinningNumbersCommand winningNumbersCommand) {
-
+        int bonusNumber = winningNumbersCommand.getBonusNumber();
+        List<Integer> correctNumbers = winningNumbersCommand.getCorrectNumbers();
+        winningNumbers = new WinningNumbers(correctNumbers, bonusNumber);
     }
 
     @Override

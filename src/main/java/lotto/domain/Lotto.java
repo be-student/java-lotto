@@ -45,4 +45,8 @@ public class Lotto {
     public List<Integer> toDto() {
         return Collections.unmodifiableList(numbers);
     }
+
+    public boolean contains(int other) {
+        return numbers.contains(other);
+    }
 }

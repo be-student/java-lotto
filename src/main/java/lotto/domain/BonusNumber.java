@@ -21,4 +21,8 @@ public class BonusNumber {
     private boolean isInRange(int bonusNumber) {
         return LOTTO_START_INCLUSIVE <= bonusNumber && bonusNumber <= LOTTO_END_INCLUSIVE;
     }
+
+    public boolean hasBonus(Lotto target) {
+        return target.contains(number);
+    }
 }

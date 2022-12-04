@@ -17,4 +17,10 @@ public class Lottos {
                 .map(Lotto::toDto)
                 .collect(Collectors.toList()));
     }
+
+    public List<LottoResult> calculateResults(WinningNumbers winningNumbers) {
+        return lottos.stream()
+                .map(winningNumbers::calculateResult)
+                .collect(Collectors.toList());
+    }
 }

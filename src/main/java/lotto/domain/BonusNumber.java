@@ -5,11 +5,11 @@ import static lotto.config.LottoConstants.LOTTO_START_INCLUSIVE;
 
 public class BonusNumber {
 
-    private final int bonusNumber;
+    private final int number;
 
     public BonusNumber(int bonusNumber) {
         validate(bonusNumber);
-        this.bonusNumber = bonusNumber;
+        number = bonusNumber;
     }
 
     private void validate(int bonusNumber) {

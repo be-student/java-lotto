@@ -8,11 +8,11 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-public class Lotto {
+class Lotto {
 
     private final List<Integer> numbers;
 
-    public Lotto(List<Integer> numbers) {
+    Lotto(List<Integer> numbers) {
         validate(numbers);
         this.numbers = numbers;
     }
@@ -42,11 +42,11 @@ public class Lotto {
         return LOTTO_START_INCLUSIVE <= lottoNumber && lottoNumber <= LOTTO_END_INCLUSIVE;
     }
 
-    public List<Integer> toDto() {
+    List<Integer> toDto() {
         return Collections.unmodifiableList(numbers);
     }
 
-    public boolean contains(int other) {
+    boolean contains(int other) {
         return numbers.contains(other);
     }
 }

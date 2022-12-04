@@ -3,11 +3,11 @@ package lotto.domain;
 import static lotto.config.LottoConstants.LOTTO_END_INCLUSIVE;
 import static lotto.config.LottoConstants.LOTTO_START_INCLUSIVE;
 
-public class BonusNumber {
+class BonusNumber {
 
     private final int number;
 
-    public BonusNumber(int bonusNumber) {
+    BonusNumber(int bonusNumber) {
         validate(bonusNumber);
         number = bonusNumber;
     }
@@ -22,7 +22,7 @@ public class BonusNumber {
         return LOTTO_START_INCLUSIVE <= bonusNumber && bonusNumber <= LOTTO_END_INCLUSIVE;
     }
 
-    public boolean hasBonus(Lotto target) {
+    boolean hasBonus(Lotto target) {
         return target.contains(number);
     }
 }

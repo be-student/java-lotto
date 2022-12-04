@@ -19,7 +19,7 @@ public class WinningNumbers {
         }
     }
 
-    public LottoResult calculateResult(Lotto target) {
+    LottoResult calculateResult(Lotto target) {
         int sameCount = correctNumbers.calculateSameCount(target);
         boolean hasBonus = bonusNumber.hasBonus(target);
         return LottoResult.getMaxPrize(sameCount, hasBonus);

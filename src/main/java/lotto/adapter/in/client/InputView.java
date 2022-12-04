@@ -18,12 +18,12 @@ public class InputView {
     private static final String ASK_AMOUNT_MESSAGE = "구입금액을 입력해 주세요.";
     private static final String ASK_WINNING_MESSAGE = "\n당첨 번호를 입력해 주세요.";
 
-    public BuyLottoCommand getAmountFromClient() {
+    BuyLottoCommand getAmountFromClient() {
         System.out.println(ASK_AMOUNT_MESSAGE);
         return new BuyLottoCommand(Console.readLine());
     }
 
-    public List<Integer> askCorrectNumber() {
+    List<Integer> askCorrectNumber() {
         System.out.println(ASK_WINNING_MESSAGE);
         String input = Console.readLine();
         validateCorrectNumber(input);
@@ -42,7 +42,7 @@ public class InputView {
         return WINNING_NUMBER.matcher(input).matches();
     }
 
-    public int askBonusNumber() {
+    int askBonusNumber() {
         System.out.println("\n보너스 번호를 입력해 주세요.");
         String input = Console.readLine();
         validateBonusNumber(input);

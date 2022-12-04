@@ -6,7 +6,7 @@ public class LottosDto {
 
     private final List<List<Integer>> lottos;
 
-    public LottosDto(List<List<Integer>> lottos) {
+    LottosDto(List<List<Integer>> lottos) {
         this.lottos = lottos;
     }
 

@@ -29,6 +29,7 @@ public class LottoClient {
     }
 
     private void getAllLottos() {
+        outputView.printAllLottos(lottoUseCase.getAllLottos());
     }
 
 

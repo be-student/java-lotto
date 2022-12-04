@@ -4,6 +4,7 @@ import java.util.List;
 import lotto.application.port.in.BuyLottoCommand;
 import lotto.application.port.in.LottoUseCase;
 import lotto.application.port.in.WinningNumbersCommand;
+import lotto.domain.LottoResultDto;
 
 public class LottoClient {
 
@@ -33,13 +34,14 @@ public class LottoClient {
         outputView.printAllLottos(lottoUseCase.getAllLottos());
     }
 
-
     private void changeWinningNumbers() {
         List<Integer> correctNumber = inputView.askCorrectNumber();
         int bonusNumber = inputView.askBonusNumber();
         lottoUseCase.changeWinningNumbers(new WinningNumbersCommand(correctNumber, bonusNumber));
     }
-    
+
     private void printStatistic() {
+        LottoResultDto lottoResultDto = lottoUseCase.calculateStatistics();
+        outputView.printStatistics(lottoResultDto);
     }
 }

@@ -1,10 +1,13 @@
 package lotto.application.service;
 
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 import lotto.application.port.in.BuyLottoCommand;
 import lotto.application.port.in.LottoUseCase;
 import lotto.application.port.in.WinningNumbersCommand;
 import lotto.domain.LottoGenerator;
+import lotto.domain.LottoResult;
 import lotto.domain.LottoResultDto;
 import lotto.domain.Lottos;
 import lotto.domain.LottosDto;
@@ -42,6 +45,10 @@ public class LottoApplication implements LottoUseCase {
 
     @Override
     public LottoResultDto calculateStatistics() {
-        return null;
+        List<LottoResult> lottoResults = lottos.calculateResults(winningNumbers);
+        Map<LottoResult, Integer> result = new EnumMap<>(LottoResult.class);
+        lottoResults
+                .forEach(it -> result.put(it, result.getOrDefault(it, 0) + 1));
+        return new LottoResultDto(result, lottoResults.size());
     }
 }

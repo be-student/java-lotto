@@ -35,4 +35,8 @@ public enum LottoResult {
         }
         return current;
     }
+
+    public int getPrize() {
+        return prize;
+    }
 }

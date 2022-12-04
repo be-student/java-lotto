@@ -1,5 +1,6 @@
 package lotto.adapter.in.client;
 
+import lotto.application.port.in.BuyLottoCommand;
 import lotto.application.port.in.LottoUseCase;
 
 public class LottoClient {
@@ -23,10 +24,13 @@ public class LottoClient {
     }
 
     private void buyLotto() {
+        BuyLottoCommand buyLottoCommand = inputView.getAmountFromClient();
+        lottoUseCase.buy(buyLottoCommand);
     }
 
     private void getAllLottos() {
     }
+
 
     private void changeWinningNumbers() {
     }
